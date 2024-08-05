@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
 
-const SPEED = 130.0
-const JUMP_VELOCITY = -300.0
-const AIR_JUMP_VELOCITY = -200.0
+const SPEED : float = 130.0
+const JUMP_VELOCITY : float = -300.0
+const AIR_JUMP_VELOCITY : float = -200.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var air_jump = false;
+var air_jump : bool = false;
 
-func _physics_process(delta):
+func _physics_process(delta : float):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
