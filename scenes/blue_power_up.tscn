@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://5v83tl4wekkl"]
+
+[ext_resource type="Script" path="res://scripts/blue_power_up.gd" id="1_obasv"]
+[ext_resource type="Texture2D" uid="uid://gdm1ttrwwaxn" path="res://assets/sprites/world_tileset.png" id="2_u46al"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uri32"]
+atlas = ExtResource("2_u46al")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kspjy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uri32")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0hes"]
+radius = 4.0
+height = 14.0
+
+[node name="blue_power_up" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_obasv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kspjy")
+frame_progress = 0.965146
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_w0hes")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
