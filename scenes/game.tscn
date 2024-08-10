@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0ykkxduyggy3"]
+[gd_scene load_steps=15 format=3 uid="uid://d0ykkxduyggy3"]
 
 [ext_resource type="PackedScene" uid="uid://cchhww3nrmtlr" path="res://scenes/player.tscn" id="1_cnh87"]
 [ext_resource type="Texture2D" uid="uid://gdm1ttrwwaxn" path="res://assets/sprites/world_tileset.png" id="2_nmx5n"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://5v83tl4wekkl" path="res://scenes/blue_power_up.tscn" id="5_dayfh"]
 [ext_resource type="PackedScene" uid="uid://digrkcw55kftl" path="res://scenes/killzone.tscn" id="6_s48wc"]
 [ext_resource type="PackedScene" uid="uid://dc5jsaha8jph0" path="res://scenes/slime.tscn" id="7_7bjm0"]
+[ext_resource type="FontFile" uid="uid://b73kclxsf8hut" path="res://assets/fonts/PixelOperator8.ttf" id="8_68qto"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bj516"]
 texture = ExtResource("2_nmx5n")
@@ -532,3 +533,35 @@ position = Vector2(152, 56)
 
 [node name="Slime" parent="." instance=ExtResource("7_7bjm0")]
 position = Vector2(528, 64)
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label2" type="Label" parent="Labels"]
+offset_left = 362.0
+offset_top = 1.0
+offset_right = 462.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("8_68qto")
+theme_override_font_sizes/font_size = 8
+text = "Falling hurts."
+
+[node name="Label" type="Label" parent="Labels"]
+offset_left = -136.0
+offset_top = 25.0
+offset_right = -36.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("8_68qto")
+theme_override_font_sizes/font_size = 8
+text = "Space to jump."
+
+[node name="Label3" type="Label" parent="Labels"]
+offset_left = 717.0
+offset_top = -112.0
+offset_right = 817.0
+offset_bottom = -95.0
+theme_override_colors/font_color = Color(0.0117647, 0.14902, 0.34902, 1)
+theme_override_fonts/font = ExtResource("8_68qto")
+theme_override_font_sizes/font_size = 8
+text = "Almost there."
