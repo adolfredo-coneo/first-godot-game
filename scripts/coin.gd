@@ -1,8 +1,7 @@
 extends Area2D
 
-var coinTotal : int = 0
+@onready var game_manager = %GameManager
 
 func _on_body_entered(body):
-	coinTotal +=1
-	print(coinTotal)
+	game_manager.add_point()
 	queue_free()
